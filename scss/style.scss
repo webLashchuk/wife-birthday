@@ -138,6 +138,7 @@
         column-count: 4;
         column-gap: 22px;
         margin-bottom: 72px;
+        overflow: hidden;
     }
 
 
@@ -205,20 +206,24 @@
 
         width: 100%;
         height: 100vh;
-        background-image: url('../images/hero.jpg');
+        // background-image: url('../images/hero.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         box-shadow: inset 0 0 0 1500px rgba($gray, 0.7);
         padding: 70px 0;
 
-        &__wrapper {
-            background-image: none;
-        }
-
     }
 }
 
 @media (max-width: 992px) {
+
+    .hero {
+        background-image: url('../images/hero.jpg');
+
+        &__wrapper {
+            background-image: none;
+        }
+    }
 
     .potfolio__content {
         column-count: 3;
@@ -239,9 +244,11 @@
 
     .hero {
         padding: 0;
+        
     
         &__wrapper {
             max-width: 1200px;
+           
             width: 100%;
             height: 576px;
             display: flex;

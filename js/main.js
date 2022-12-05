@@ -24,8 +24,6 @@ $(function(){
         });
     }
 
-    $("img").lazyload();
-
     Fancybox.bind("[data-fancybox='gallery']", {
         Toolbar  : false,
         selector : '.swiper-slide:not(.swiper-slide-duplicate)',

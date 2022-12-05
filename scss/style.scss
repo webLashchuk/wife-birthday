@@ -300,40 +300,29 @@
 
     .portfolio {
         padding: 30px 0 30px;
-    }
 
-    .portfolio__content {
-        column-count: 2;
-    }
+        &__filter-btn {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
 
-    .portfolio__btn {
-        display: block;
-        margin-bottom: 30px;
-    }
 
-    .portfolio__btn+.portfolio__btn {
-        margin-left: 0;
-    }
-
-    .portfolio__add {
-        margin-bottom: 40px;
-    }
-
-    .blockquote {
-        margin-bottom: 40px;
-        padding: 0 10px;
-    }
-
-    .portfolio__video {
-        margin-bottom: 75px;
-    }
-
-    .portfolio__numbers {
-        flex-wrap: wrap;
-    }
-
-    .portfolio__numbers {
-        width: 50%;
-        margin-bottom: 40px;
+        &__content {
+            column-count: 2;
+                column-gap: 20px;
+        }
+    
+        &__btn {
+            display: block;
+            margin-bottom: 30px;
+        }
+    
+        &__btn+.portfolio__btn {
+            margin-left: 0;
+        }
+    
+        &__add {
+            margin-bottom: 40px;
+        }
     }
 }

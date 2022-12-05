@@ -1,0 +1,332 @@
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'global';
+@import 'media';
+
+.header {
+    background-color: $white;
+    display: flex;
+    position: fixed;
+    line-height: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: url('../images/header-bg.png');
+    transition: background-color .7s, padding .7s;
+    box-shadow: 0px 0px 5px 0px $accent;
+    z-index: 6;
+    padding: 20px 10px;
+
+    &__slogan {
+        font-size: 36px;
+        color: $red;
+    }
+
+    &__sticky {
+        position: fixed;
+        background-color: $white;
+        z-index: 1;
+        box-shadow: 0px 0px 5px 0px $accent;
+        padding: 10px 0;
+        z-index: 5;
+    }
+}
+
+.title {
+    font-size: 54px;
+}
+
+.content {
+    width: 100%;
+    height: 700px;
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 0 1500px rgba($gray, 0.7);
+    padding: 70px 0;
+
+    &__wrapper {
+        max-width: 1200px;
+        width: 100%;
+        height: 576px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        background-image: url('../images/hero.jpg');
+        background-size: 384px 576px;
+        background-repeat: no-repeat;
+        background-position: 125px center;
+        padding: 100px 0;
+
+    }
+
+    &__container {
+        // background-image: url('../images/hero.jpg');
+        width: 384px;
+        height: 576px;
+        background-size: contain;
+    }
+
+    &__inner {
+        align-self: end;
+        max-width: 500px;
+    }
+
+    &__slogan {
+        display: inline-block;
+        position: relative;
+        font-size: 25px;
+        padding-right: 40px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            mask-image: url('../images/heart.svg');
+            background-color: $red;
+            mask-repeat: no-repeat;
+            top: 5px;
+            right: 0;
+        }
+    }
+}
+
+.portfolio {
+    padding: 140px 0 165px;
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    &__filter-btn {
+        margin-right: 65px;
+    }
+
+    &__btn {
+        background-color: transparent;
+        border: none;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 24px;
+        color: #333;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 0 4px 5px;
+        outline: #fcbb08;
+    }
+
+    &__btn+.portfolio__btn {
+        margin-left: 25px;
+    }
+
+    .mixitup-control-active {
+        border-bottom: 1px solid #fcbb08;
+    }
+
+    &__content {
+        grid-auto-flow: row;
+        column-count: 4;
+        column-gap: 22px;
+        margin-bottom: 72px;
+    }
+
+
+    &__item {
+        margin-bottom: 22px;
+        position: relative;
+    }
+
+    &__item:first-child {
+        margin-top: 0;
+    }
+
+    // &__item-link {
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    //     bottom: 0;
+    //     font-weight: 600;
+    //     font-size: 14px;
+    //     line-height: 14px;
+    //     letter-spacing: 1.4;
+    //     text-transform: uppercase;
+    //     color: #fff;
+    //     background-color: #4c4a4a;
+    //     border: 12px solid #666565;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     opacity: 0;
+    //     transition: all .3s;
+    // }
+
+    &__item:hover .portfolio__item-link {
+        opacity: 1;
+    }
+
+    &__item img {
+        width: 100%;
+    }
+
+    &__add {
+        display: block;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 17px;
+        color: #242121;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        padding: 42px 15px 41px;
+        background-color: #f6f8fa;
+        margin-bottom: 130px;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .portfolio__filter-btn {
+        margin-right: 0;
+    }
+
+    .hero {
+
+        width: 100%;
+        height: 100vh;
+        background-image: url('../images/hero.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        box-shadow: inset 0 0 0 1500px rgba($gray, 0.7);
+        padding: 70px 0;
+
+        &__wrapper {
+            background-image: none;
+        }
+
+    }
+}
+
+@media (max-width: 992px) {
+
+    .potfolio__content {
+        column-count: 3;
+        margin-bottom: 40px;
+    }
+
+    .portfolio__top {
+        display: block;
+        margin-bottom: 50px;
+    }
+
+    .portfolio__filter-btn {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 0;
+    
+        &__wrapper {
+            max-width: 1200px;
+            width: 100%;
+            height: 576px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background-size: 384px 576px;
+            background-repeat: no-repeat;
+            background-position: 125px center;
+            padding: 0;
+    
+        }
+    
+        &__container {
+            // background-image: url('../images/hero.jpg');
+            width: 384px;
+            height: 576px;
+            background-size: contain;
+        }
+    
+        &__inner {
+            padding-top: 200px;
+            align-self: center;
+            max-width: 500px;
+        }
+    
+        &__slogan {
+            display: inline-block;
+            position: relative;
+            font-size: 20px;
+            padding-right: 40px;
+    
+            &::after {
+                content: "";
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                mask-image: url('../images/heart.svg');
+                background-color: $red;
+                mask-repeat: no-repeat;
+                top: 5px;
+                right: 0;
+            }
+        }
+    }
+
+    .title {
+        font-size: 34px;
+    }
+
+    .portfolio {
+        padding: 30px 0 30px;
+    }
+
+    .portfolio__content {
+        column-count: 2;
+    }
+
+    .portfolio__btn {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    .portfolio__btn+.portfolio__btn {
+        margin-left: 0;
+    }
+
+    .portfolio__add {
+        margin-bottom: 40px;
+    }
+
+    .blockquote {
+        margin-bottom: 40px;
+        padding: 0 10px;
+    }
+
+    .portfolio__video {
+        margin-bottom: 75px;
+    }
+
+    .portfolio__numbers {
+        flex-wrap: wrap;
+    }
+
+    .portfolio__numbers {
+        width: 50%;
+        margin-bottom: 40px;
+    }
+}

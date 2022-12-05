@@ -9,6 +9,21 @@ $(function(){
     //     }
     // });
 
+    const containerEl = document.querySelector('.portfolio__content');
+    let mixer;
+
+    if (containerEl) {
+        mixer = mixitup(containerEl, {
+            controls: {
+                toggleDefault: 'none'
+            },
+            classNames: {
+                block: '',
+                elementFilter: 'portfolio__filter-btn'
+            }
+        });
+    }
+
     Fancybox.bind("[data-fancybox='gallery']", {
         Toolbar  : false,
         selector : '.swiper-slide:not(.swiper-slide-duplicate)',
@@ -31,20 +46,7 @@ $(function(){
         }
     });
 
-    const containerEl = document.querySelector('.portfolio__content');
-    let mixer;
-
-    if (containerEl) {
-        mixer = mixitup(containerEl, {
-            controls: {
-                toggleDefault: 'none'
-            },
-            classNames: {
-                block: '',
-                elementFilter: 'portfolio__filter-btn'
-            }
-        });
-    }
+   
 
     // var mixer = mixitup('.portfolio__content');
 

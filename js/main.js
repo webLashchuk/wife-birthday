@@ -1,53 +1,45 @@
-$(function(){
-    // const headerHeight = $('.header').outerHeight();
+$(function () {
+    var elem = document.querySelector('.portfolio__content');
+    var msnry = new Masonry(elem, {
+        // options
+        itemSelector: '.portfolio__item',
+        columnWidth: 15,
+        selActive: false
+    });
 
-    // $(window).scroll(function () {
-    //     if ($(window).scrollTop() >= headerHeight) {
-    //         $('.header').addClass('header__sticky')
-    //     } else {
-    //         $('.header').removeClass('header__sticky')
-    //     }
-    // });
-
-    const containerEl = document.querySelector('.portfolio__content');
-    let mixer;
-
-    if (containerEl) {
-        mixer = mixitup(containerEl, {
-            controls: {
-                toggleDefault: 'none'
-            },
-            classNames: {
-                block: '',
-                elementFilter: 'portfolio__filter-btn'
-            }
-        });
-    }
-
-    Fancybox.bind("[data-fancybox='gallery']", {
-        Toolbar  : false,
-        selector : '.swiper-slide:not(.swiper-slide-duplicate)',
-        animated: false,
-        showClass: false,
-        hideClass: false,
-        infinite: false,
-        closeButton: 'top',
-        hideScrollbar: true,
-        infinite: false,
-        loop: false,
-        mainClass: 'products-gallery',
-        backFocus : false,
-    
-        Image: {
-            click: 'close',
-            wheel: 'slide',
-            zoom: false,
-            fit: "contain",
+    var $grid = $('.portfolio__content').isotope({
+        // options
+        itemSelector: '.portfolio__item',
+        percentPosition: true,
+        masonry: {
+            // use element for option
+            columnWidth: '.portfolio__item'
         }
     });
 
-   
+    $grid.imagesLoaded().progress(function () {
+        $grid.isotope('layout');
+    });
 
-    // var mixer = mixitup('.portfolio__content');
+    $('.portfolio__filter-btn').on('click', 'button', function () {
+        var filterValue = $(this).attr('data-filter');
+        $grid.isotope({ filter: filterValue });
+    });
+
+    var buttonGroups = document.querySelectorAll('.portfolio__filter-btn');
+    for (var i = 0; i < buttonGroups.length; i++) {
+        buttonGroups[i].addEventListener('click', onButtonGroupClick);
+    }
+
+    function onButtonGroupClick(event) {
+        // only button clicks
+        if (!matchesSelector(event.target, '.portfolio__btn')) {
+            return;
+        }
+        var button = event.target;
+        button.parentNode.querySelector('.is-checked').classList.remove('is-checked');
+        button.classList.add('is-checked');
+    }
+
 
 })

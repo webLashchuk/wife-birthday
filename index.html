@@ -14,7 +14,6 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="css/jquery.fancybox.css">
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -52,7 +51,7 @@
                 <div class="portfolio__top">
                     <h2 class="title"></h2>
                     <div class="portfolio__filter-btn">
-                        <button class="portfolio__btn" data-filter="all">Все</button>
+                        <button class="portfolio__btn is-checked" data-filter="*">Все</button>
                         <button class="portfolio__btn" data-filter=".category-a">2022</button>
                         <button class="portfolio__btn" data-filter=".category-b">2021</button>
                         <button class="portfolio__btn" data-filter=".category-c">2020</button>
@@ -61,7 +60,7 @@
                     </div>
                 </div>
             </div>
-            <div class="portfolio__content">
+            <div id="gallery" class="portfolio__content">
                 <div class="portfolio__item mix category-a">
                     <a class="portfolio__item-link" data-fancybox="gallery" href="images/2022/1.jpg">
                         <img src="images/2022/1.jpg" alt="Фотография">
@@ -488,8 +487,11 @@
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
     <script src="js/mixitup.min.js"></script>
     <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
     <script src="js/main.min.js"></script>
 </body>
 
